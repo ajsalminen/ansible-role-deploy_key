@@ -1,0 +1,5 @@
+---
+PLAYBOOK_PRIVATE_ROLE_ASSETS_PATH: "{{playbook_dir}}/assets/private/roles"
+user_management_chown_removed: false
+deploy_key_assets_path: "{{PLAYBOOK_PRIVATE_ROLE_ASSETS_PATH}}/deploy_key/"
+deploy_key_name: deploy_key

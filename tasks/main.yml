@@ -1,0 +1,13 @@
+---
+
+- name: Ensure the files dir exists
+  local_action: >
+    file path={{deploy_key_assets_path}} state=directory
+  sudo: no
+
+- name: Generate SSH key for git read access.
+  local_action: >
+    shell /usr/bin/ssh-keygen -P '{{ssh_key_passphrase}}' -b 2048 -f
+    {{deploy_key_assets_path}}/{{deploy_key_name}} -t rsa -q
+    creates={{deploy_key_assets_path}}/{{deploy_key_name}}
+  sudo: no
